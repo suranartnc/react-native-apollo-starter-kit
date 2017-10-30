@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "restParams": true,
+      "spread": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "extends": [
+    "prettier",
+    "eslint:recommended", 
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "react",
+    "react-native"
+  ],
+  "rules": {
+    "prettier/prettier": "error",    
+    "react-native/no-unused-styles": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2,
+    "react-native/split-platform-components": 2    
+  },
+  "globals": {
+    "fetch": true
+  }
+}
