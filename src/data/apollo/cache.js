@@ -1,7 +1,7 @@
 import { InMemoryCache } from 'apollo-cache-inmemory'
 
 const cache = new InMemoryCache({
-	addTypename: true
+  addTypename: true
 })
 
 export default cache
