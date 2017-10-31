@@ -3,7 +3,7 @@ import { StackNavigator } from 'react-navigation'
 import screen from 'hocs/screen'
 
 import HomeScreen from 'screens/Home'
-import EntryScreen from 'screens/Entry'
+// import EntryScreen from 'screens/Entry'
 
 const headerStyles = {
   headerStyle: {
@@ -23,18 +23,18 @@ const App = StackNavigator({
         title: 'Home'
       }
     }
-  },
-  Entry: {
-    screen: screen()(EntryScreen),
-    navigationOptions: ({ navigation }) => {
-      const { state: { params: { title } } } = navigation
-
-      return {
-        ...headerStyles,
-        title
-      }
-    }
   }
+  // Entry: {
+  //   screen: screen()(EntryScreen),
+  //   navigationOptions: ({ navigation }) => {
+  //     const { state: { params: { title } } } = navigation
+
+  //     return {
+  //       ...headerStyles,
+  //       title
+  //     }
+  //   }
+  // }
 })
 
 export default App

@@ -7,37 +7,37 @@ import { compose, withHandlers } from 'recompose'
 
 import { StyleSheet, View, FlatList } from 'react-native'
 
-import withLoadingIndicator from 'hocs/withLoadingIndicator'
-import EntryItem from 'components/EntryItem'
+// import withLoadingIndicator from 'hocs/withLoadingIndicator'
+// import EntryItem from 'components/EntryItem'
 
 function HomeScreen(props) {
-  const { data: { entries }, fetchEntry } = props
+  // const { data: { entries }, fetchEntry } = props
 
   return (
     <View style={styles.container}>
-      <FlatList
+      {/* <FlatList
         data={entries.edges.map(entry => entry.node)}
         renderItem={({ item }) => {
           return <EntryItem entry={item} onPress={fetchEntry} />
         }}
         keyExtractor={item => item.id}
-      />
+      /> */}
     </View>
   )
 }
 
-HomeScreen.propTypes = {
-  data: PropTypes.shape({
-    entries: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: EntryItem.propTypes.entry
-        })
-      )
-    })
-  }),
-  fetchEntry: PropTypes.func.isRequired
-}
+// HomeScreen.propTypes = {
+//   data: PropTypes.shape({
+//     entries: PropTypes.shape({
+//       edges: PropTypes.arrayOf(
+//         PropTypes.shape({
+//           node: EntryItem.propTypes.entry
+//         })
+//       )
+//     })
+//   }),
+//   fetchEntry: PropTypes.func.isRequired
+// }
 
 const styles = StyleSheet.create({
   container: {
@@ -45,15 +45,14 @@ const styles = StyleSheet.create({
   }
 })
 
-export default compose(
-  graphql(gql``),
-  withLoadingIndicator(),
-  withHandlers({
-    fetchEntry: ({ navigation }) => ({ id, title }) => () => {
-      navigation.navigate('Entry', {
-        id,
-        title
-      })
-    }
-  })
-)(HomeScreen)
+export default compose()(HomeScreen)
+// graphql(gql``),
+// withLoadingIndicator(),
+// withHandlers({
+//   fetchEntry: ({ navigation }) => ({ id, title }) => () => {
+//     navigation.navigate('Entry', {
+//       id,
+//       title
+//     })
+//   }
+// })
