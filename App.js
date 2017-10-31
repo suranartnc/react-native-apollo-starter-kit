@@ -2,7 +2,7 @@ import { StackNavigator } from 'react-navigation'
 
 import screen from 'hocs/screen'
 
-import HomeScreen from 'screens/Home'
+import LoginScreen from 'screens/Login'
 // import EntryScreen from 'screens/Entry'
 
 const headerStyles = {
@@ -15,12 +15,12 @@ const headerStyles = {
 }
 
 const App = StackNavigator({
-  Home: {
-    screen: screen()(HomeScreen),
+  Login: {
+    screen: screen()(LoginScreen),
     navigationOptions: () => {
       return {
         ...headerStyles,
-        title: 'Home'
+        title: 'Login'
       }
     }
   }
