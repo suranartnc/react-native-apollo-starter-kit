@@ -2,8 +2,8 @@ import { StackNavigator } from 'react-navigation'
 
 import screen from 'hocs/screen'
 
-import HomeScreen from 'screens/Home'
-import EntryScreen from 'screens/Entry'
+import LoginScreen from 'screens/Login'
+// import EntryScreen from 'screens/Entry'
 
 const headerStyles = {
   headerStyle: {
@@ -15,26 +15,26 @@ const headerStyles = {
 }
 
 const App = StackNavigator({
-  Home: {
-    screen: screen()(HomeScreen),
+  Login: {
+    screen: screen()(LoginScreen),
     navigationOptions: () => {
       return {
         ...headerStyles,
-        title: 'Home'
-      }
-    }
-  },
-  Entry: {
-    screen: screen()(EntryScreen),
-    navigationOptions: ({ navigation }) => {
-      const { state: { params: { title } } } = navigation
-
-      return {
-        ...headerStyles,
-        title
+        title: 'Login'
       }
     }
   }
+  // Entry: {
+  //   screen: screen()(EntryScreen),
+  //   navigationOptions: ({ navigation }) => {
+  //     const { state: { params: { title } } } = navigation
+
+  //     return {
+  //       ...headerStyles,
+  //       title
+  //     }
+  //   }
+  // }
 })
 
 export default App
